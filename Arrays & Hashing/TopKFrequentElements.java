@@ -36,3 +36,9 @@ public static int[] topKFrequent(int[] nums, int target) {
 }
 
 #solution 2: use bucket sort
+/*
+1. again count the frequency of number and put it in a map
+2. fill a resulting array with -1 first and then put the frequency number in index of array, 
+for eg if 3 occurs 5 times it will be at 5th index of array.
+3. return k elements from the last as the max frequency will be at last 
+*/    
