@@ -1,0 +1,48 @@
+import java.util.*;
+//https://neetcode.io/problems/longest-consecutive-sequence?list=blind75
+/**
+-Put all numbers in a set
+  Why? Because looking up "does this number exist?" in a set is very fast (O(1)).
+-Go through each number in the set
+  For every number n, check: does n-1 exist in the set?
+  If yes, skip it → because it’s not the start of a chain (someone smaller will start the chain).
+  If no, then n is the start of a new chain.
+-Count forward
+  From that starting number, keep checking n+1, n+2, n+3 … as long as they exist in the set.
+  Count how many numbers are in this chain.
+-Track the maximum
+  Update your answer with the biggest chain length you’ve seen.
+**/
+class Solution {
+
+    public static int longestConsecutive(int[] nums) {
+
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
+        }
+
+
+        int output = 1;
+        for(int n: set) {
+
+            if(!set.contains(n-1)) {
+                int current = n;
+                int count = 1;
+                while(set.contains(current+1)) {
+                    count++;
+                    current++;
+                }
+                output = Math.max(output,count);
+            }
+        }
+
+        return output;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(longestConsecutive(new int[]{0,3,2,5,4,6,1,1}));
+    }
+
+
+}
