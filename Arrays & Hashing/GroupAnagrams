@@ -1,1 +1,37 @@
+import java.util.*;
 
+/**
+-code is self explanatory just remember to create an array of 26 chars and put it as key
+**/
+
+class Solution {
+
+    public static List<List<String>> groupAnagrams(String[] strs) {
+
+        //can't use int[] because int[] don't override equals and hashcode
+        Map<String, List<String>> map = new HashMap<>();
+        for(String s: strs) {
+            int arr[] = new int[26];
+            for(char c: s.toCharArray()) {
+                arr[c - 'a']++;
+            }
+            String key = Arrays.toString(arr);
+            List<String> al = null;
+            if(map.containsKey(key)) {
+                al = map.get(key);
+            } else{
+                al = new ArrayList<>();
+            }
+            al.add(s);
+            map.put(key, al);
+        }
+        return new ArrayList<>(map.values());
+    }
+
+    public static void main(String[] args) {
+        List<List<String>> lists = groupAnagrams(new String[]{"act","pots","tops","cat","stop","hat"});
+        System.out.println(lists);
+    }
+
+
+}
