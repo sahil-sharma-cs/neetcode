@@ -1,0 +1,22 @@
+//Use a set.
+import java.util.*;
+
+class Solution {
+
+    public static boolean hasDuplicate(int[] nums) {
+
+        Set<Integer> set = new HashSet<>();
+        for(int i: nums) {
+            if(set.contains(i)) {
+                return true;
+            } else {
+                set.add(i);
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(hasDuplicate(new int[]{0,3,2,5,4,,3,6,1}));
+    }
+}
