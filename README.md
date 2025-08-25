@@ -35,10 +35,9 @@ All code is written in **Java**. Each file includes comments about my approach, 
 
 ## 🚩 How to Use
 
-1. Browse solution folders by day/topic
-2. Open `.java` file for code and explanation
-3. Run locally using Java 8+ (`javac FileName.java` \& `java FileName`)
-4. Reference LeetCode for detailed problem statements
+1. Open `.java` file for code and explanation
+2. Run locally using Java 8+ (`javac FileName.java` \& `java FileName`)
+3. Reference LeetCode for detailed problem statements
 
 ***
 
