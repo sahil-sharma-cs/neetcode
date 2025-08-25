@@ -1,0 +1,34 @@
+import java.util.*;
+/**
+
+-The key here is to remember that you need int arr of 26 length to increment and decrement s & t char count.
+-then simply count if array is all zero, return true else false
+-another key thing to remember is to subtract 'a' i.e. 97 to fit the char in our array for eg if you get c, 
+ then c - a 99 - 97 will fit into 2nd index if you dont minus a it will give array out of bounds
+**/
+
+class Solution {
+
+    public static boolean isAnagram(String s, String t) {
+
+        int arr[] = new int[26];
+
+        for(int i=0; i<s.length(); i++) {
+            arr[s.charAt(i) - 'a']++;
+        }
+        for(int i=0; i<t.length(); i++) {
+            arr[t.charAt(i) - 'a']--;
+        }
+        for(int i=0; i<arr.length; i++) {
+            if(arr[i]!=0)
+                return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(isAnagram("abs","sfa"));
+    }
+
+
+}
