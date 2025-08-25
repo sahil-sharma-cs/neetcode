@@ -1,3 +1,5 @@
+//https://neetcode.io/problems/duplicate-integer?list=blind75
+
 //Use a set.
 import java.util.*;
 
