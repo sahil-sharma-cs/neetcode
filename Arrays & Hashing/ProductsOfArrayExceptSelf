@@ -1,3 +1,5 @@
+//https://neetcode.io/problems/products-of-array-discluding-self?list=blind75
+
 //you can also do this in O(1) space complexity if you don't count the resulting array by using 
 //right valriable instead of array
 /*
