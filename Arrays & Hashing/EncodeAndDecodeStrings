@@ -1,3 +1,9 @@
+//https://neetcode.io/problems/string-encode-and-decode?list=blind75
+/**
+encode: put length of str appended by #
+then while decoding fetch length and keep substring-ing it
+4#abcd5#xyz
+**/
 class Solution {
 
     public String encode(List<String> strs) {
