@@ -1,0 +1,36 @@
+//calculate distance between 2 index which i.e. length
+    //calculate height (breadth) which num is smaller
+    //area = l*b
+
+    //dont need to subtract pole height
+    //We never subtract the pole itself from the distance.
+    // The poles only matter in height, not in horizontal spacing.
+    //When we multiply distance × height, we’re computing the rectangle area that fits between the poles.
+
+    //always move the shorter pole
+
+    /*
+    Analogy:
+
+    Think of trying to fill a bucket between two walls:
+
+    The water can only go as high as the shorter wall.
+
+    Moving the taller wall doesn’t help — you’re still limited by the short wall.
+     */
+    public int maxArea(int[] heights) {
+
+        int max = 0;
+        int l=0, r=heights.length-1;
+        while(l<=r) {
+            int height = Math.min(heights[l], heights[r]);
+            int dist = r - l;
+            int area = height * dist;
+            max = Math.max(area, max);
+            if(heights[l] < heights[r])
+                l++;
+            else
+                r--;
+        }
+        return max;
+    }
