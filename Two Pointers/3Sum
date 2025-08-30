@@ -1,0 +1,69 @@
+
+    //without duplicate checking - this is important logic next method incluedes the duplicate fix
+    public List<List<Integer>> threeSum(int[] nums) {
+
+        List<List<Integer>> lists = new ArrayList<>();
+        Arrays.sort(nums);
+        //nums.length - 2 because sec is  + 1 of i
+        for(int i=0; i<nums.length-2; i++) {
+
+            int first = i;
+            int sec = i+1;
+            int last = nums.length-1;
+            while(sec<last) {
+                int sum = nums[first]+nums[sec]+nums[last];
+                if(sum == 0) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[first]);list.add(nums[sec]);list.add(nums[last]);
+                    lists.add(list);
+
+                    sec++;
+                    last--;
+                } else if(sum < 0) {
+                    sec++;
+                } else {
+                    last--;
+                }
+            }
+        }
+        return lists;
+    }
+
+    //duplicate fix
+    public List<List<Integer>> threeSumFinal(int[] nums) {
+
+        List<List<Integer>> lists = new ArrayList<>();
+        Arrays.sort(nums);
+        //nums.length - 2 because sec is  + 1 of i
+        for(int i=0; i<nums.length-2; i++) {
+
+            //duplicate check
+            if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+            int first = i;
+            int sec = i+1;
+            int last = nums.length-1;
+            while(sec<last) {
+
+                int sum = nums[first]+nums[sec]+nums[last];
+                if(sum == 0) {
+                    List<Integer> list = new ArrayList<>();
+                    list.add(nums[first]);list.add(nums[sec]);list.add(nums[last]);
+                    lists.add(list);
+
+                    // ✅ skip duplicate second elements
+                    while (sec < last && nums[sec] == nums[sec + 1]) sec++;
+                    // ✅ skip duplicate last elements
+                    while (sec < last && nums[last] == nums[last - 1]) last--;
+
+                    sec++;
+                    last--;
+                } else if(sum < 0) {
+                    sec++;
+                } else {
+                    last--;
+                }
+            }
+        }
+        return lists;
+    }
