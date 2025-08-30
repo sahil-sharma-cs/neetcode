@@ -10,15 +10,21 @@ Here I’m sharing my daily problem-solving journey, including code and comments
 
 This project is organized by study days, and covers the full spectrum of the LeetCode 75 plan:
 
-- Arrays \& Strings
-- Two pointers
-- Linked Lists
-- Stack, Queue
-- Binary Trees, BST
-- Sliding Window, Kadane’s
-- Hashing, Prefix/Suffix
-- Graphs
-- Dynamic Programming
+This repository follows the **official NeetCode Blind 75 list**, covering these major categories:
+
+- **Arrays & Hashing**
+- **Two Pointers**
+- **Sliding Window**
+- **Stack**
+- **Binary Search**
+- **Linked List**
+- **Trees**
+- **Backtracking**
+- **Dynamic Programming (1D & 2D)**
+- **Graphs**
+- **Greedy**
+- **Intervals**
+- **Math & Geometry**
 
 All code is written in **Java**. Each file includes comments about my approach, edge cases, and test examples.
 
