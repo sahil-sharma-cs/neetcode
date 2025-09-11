@@ -1,4 +1,7 @@
 class Solution {
+
+    //the main logic is to find all combinations whether your target exists in left window or right window. 
+    // remeber id mid element greater than right -> left window is sorted
     public int search(int[] nums, int target) {
 
         int left = 0;
