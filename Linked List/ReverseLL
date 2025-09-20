@@ -1,0 +1,15 @@
+/** remember we return prev and use 2 pointers **/
+
+class Solution {
+    public ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = null;
+        while(head!=null) {
+            curr = head.next;
+            head.next = prev;
+            prev = head;
+            head = curr;
+        }
+        return prev;
+    }
+}
